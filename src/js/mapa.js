@@ -6,7 +6,6 @@
     let marker;
 
     //utilizar provider y geocoder
-
     const geocodeService = L.esri.Geocoding.geocodeService();
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -29,7 +28,6 @@
         mapa.panTo(new L.LatLng(posicion.lat, posicion.lng))
 
         //obtener informacion de las calles al soltar el pin
-
         geocodeService.reverse().latlng(posicion, 13).run(function (error, resultado) {
             marker.bindPopup(resultado.address.LongLabel)
 
